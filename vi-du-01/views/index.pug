@@ -1,0 +1,14 @@
+//- extends de ke thua template
+extends layouts/default.pug
+include mixins/box-head.pug 
+block main 
+    +box-head("Tieu de 1","Mo ta 1")
+    +box-head("Tieu de 2","Mo ta 2")
+    +box-head("Tieu de 3","Mo ta 3")
+    //- div(class="box-head")
+        h2(class="inner-title") Lợi ích khởi tạo website bán hàng với Daca 
+        p(class="inner-desc") Hỗ trợ tăng trưởng bán hàng
+
+    //- include partials/box-head.pug 
+
+    //- include partials/box-head.pug 

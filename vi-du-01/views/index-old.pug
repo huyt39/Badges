@@ -1,0 +1,145 @@
+doctype html
+html
+  head
+    title Vi du 01
+    link(rel="stylesheet", href="/css/style.css")
+
+    //- nhung bootstrap:
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css")
+  body
+    h1 #{title}
+
+    //-tags
+    h1 Noi dung the h1 
+    h2 Noi dung the h2 
+    h3 Noi dung the h3
+    ul 
+      li Muc 1
+      li Muc 2
+      li Muc 3
+
+      p Noi dung the p 
+      p Noi dung <b>the p</b>
+      p Noi dung <i>the p</i>
+
+      p 
+      | Lorem ipsum.
+      | Ok desu
+
+      p. 
+        Lorem ipsum.
+        Ok desu
+
+
+      //- Attributes (cach 2 va 3 co the enter xuong dong)
+      button.btn.btn-success#button-test Click me 1
+      button(class="btn btn-success", id="button-test") Click me 2
+      button(class="btn btn-success" id="button-test") Click me 3
+
+      - var name = 'Huy Tuan';
+      - var sdt = '0911607399';
+      - var age = 20;
+
+      div(class="infor") 
+    
+        p=name 
+        p=sdt 
+        p=age 
+      //- Dau = phai ghi sat p, nhuoc diem la chi gan duoc bien 
+
+      div(class="infor") 
+        p Ho ten: #{name}
+        p #{sdt}
+        p #{age}   
+        //- Uu diem hon cach 1 la co the chen duoc them noi dung
+
+      - var htmlLink = "<a href='https://daca.vn/'>Daca.vn</a>";
+      p= htmlLink
+      p #{htmlLink}
+      p !{htmlLink}
+
+      //- Conditionals
+      - 
+        var infoUser = {
+          name: 'Huy Tuan',
+          phone: '0911607399',
+          email: 'hotuanhuy1203@gmail.com',
+          statusAccount: "initial"
+        };
+
+      p Ho ten: #{infoUser.name}
+      p SDT: #{infoUser.phone}
+      p Email: #{infoUser.email}
+
+      if infoUser.email
+        p Email: #{infoUser.email}
+
+      if(infoUser.diachi)
+        p Dia chi: #{infoUser.diachi}
+      else
+        p Chua co
+
+      //-Case
+      
+
+      case infoUser.statusAccount 
+        when "initial"
+          p Chờ duyệt
+        when "active"
+          p Đang hoạt động
+        when "inactive"
+          p Đang bị khóa
+        default
+          p Không có
+    //- Iteration (vong lap)
+    -
+      var listUser = [
+        "Le Van A",
+        "Nguyen Thi B",
+        "Do Van C"
+      ];
+    //- cach1:
+    ul  
+      li User 1
+      li User 2
+      li User 3
+    
+    //- cach 2:
+    ul
+      each item, index in listUser 
+        li User #{index+1}: #{item}
+
+
+    -
+      var listOfUser = [
+        {
+          fullName: 'Le Van A',
+          email: 'levana@gmail.com'
+        },
+        {
+          fullName: 'Le Van B',
+          email: 'levanb@gmail.com'
+        },
+        {
+          fullName: 'Le Van C',
+          email: 'levanc@gmail.com'
+        }
+      ];
+
+    ul 
+      each user, index in listOfUser
+        li User #{index+1}: #{user.fullName} - #{user.email} 
+ 
+
+
+
+  
+
+    img(src="/images/pug-final-logo-_-colour-128.svg")
+
+
+     //- nhung bootstrap:
+    script(src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js")
+
+    script(src="/js/script.js")

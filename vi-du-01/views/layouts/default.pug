@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title Vi du 01
+    link(rel="stylesheet", href="/css/style.css")
+
+    //- nhung bootstrap:
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css")
+  body
+
+    include ../partials/header.pug
+
+    //- div(class="header")
+        span Logo
+        span Menu
+        span Dang nhap/Dang ky
+
+    //- bien main dat ten khac cung duoc
+    block main 
+
+    //- div(class="footer")
+        span Menu
+        span Liên hệ
+        span Fanpage
+
+    include ../partials/footer.pug
+    
+    script(src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js")
+
+    script(src="/js/script.js")
